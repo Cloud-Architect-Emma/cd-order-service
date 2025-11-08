@@ -1,0 +1,6 @@
+projectKey=cd-order-service
+serverUrl=http://localhost:9000
+serverVersion=25.11.0.114957
+dashboardUrl=http://localhost:9000/dashboard?id=cd-order-service
+ceTaskId=3d28396f-eb79-46d1-8a0b-5f3d9f158067
+ceTaskUrl=http://localhost:9000/api/ce/task?id=3d28396f-eb79-46d1-8a0b-5f3d9f158067
