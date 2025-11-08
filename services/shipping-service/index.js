@@ -3,7 +3,7 @@ const app = express();
 const PORT = 3005; // Replace X with correct port
 
 app.get('/shipping_service', (req, res) => {
-  res.json({ message: 'Mock response from SERVICE_NAME' });
+  res.json({ message: 'Mock response from shippind_service' });
 });
 
 app.get('/health', (req, res) => {

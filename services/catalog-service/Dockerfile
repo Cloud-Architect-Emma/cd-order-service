@@ -1,6 +1,18 @@
+# Use Node.js base image
 FROM node:18
+
+# Set working directory
 WORKDIR /app
-COPY . .
+
+# Copy package files and install dependencies
+COPY package*.json ./
 RUN npm install
-EXPOSE 3001
-CMD ["node", "index.js"]
+
+# Copy the rest of the service code
+COPY . .
+
+# Expose the service port
+EXPOSE 3003
+
+# Start the service
+CMD ["npm", "start"]
