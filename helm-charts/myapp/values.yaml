@@ -1,11 +1,13 @@
-replicaCount: 2  # Production: Scale based on load
+replicaCount: 2
 image:
-  repository: yourusername/yourapp  # Your Docker Hub image
+  repository: yourusername/yourapp
   tag: "latest"
   pullPolicy: IfNotPresent
+
 service:
-  type: LoadBalancer  # Exposes app externally; use Ingress in prod for better control
+  type: LoadBalancer
   port: 80
+
 resources:
   limits:
     cpu: 500m
@@ -13,10 +15,10 @@ resources:
   requests:
     cpu: 250m
     memory: 256Mi
+
 env:
   - name: MY_ENV_VAR
-    value: "production-value"  # Add secrets here or via external sources
-
+    value: "production-value"
 
 serviceAccount:
   create: true
@@ -29,3 +31,15 @@ ingress:
   annotations: {}
   hosts: []
   tls: []
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+
+# ADD THIS BLOCK
+httpRoute:
+  enabled: false
+  host: ""
+  path: "/"

@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-production
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/Cloud-Architect-Emma/my-eks-app-deployments.git
+    targetRevision: main
+    path: helm-charts/myapp
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp-production
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
