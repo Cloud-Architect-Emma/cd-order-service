@@ -16,3 +16,9 @@ resources:
 env:
   - name: MY_ENV_VAR
     value: "production-value"  # Add secrets here or via external sources
+
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
