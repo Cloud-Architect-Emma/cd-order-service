@@ -14,7 +14,7 @@ Full-stack microservices on AWS EKS, including API gateway, user, product, and n
 
 # **Architecture**
 
-![Architecture Diagram](architecture/architecture-Diagram.PNG)
+![Architecture Diagram](architecture/architecture.PNG)
 
 Services: API Gateway, User Service, Product Service, Notification Service.
 Flow: GitHub → GitHub Actions → Docker Hub → ArgoCD → EKS → Prometheus/Grafana | Splunk.
